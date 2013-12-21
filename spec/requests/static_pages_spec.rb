@@ -1,44 +1,43 @@
 require 'spec_helper'
 
 describe "StaticPages" do
-
-	let(:base_title) {"Chesshall"}
-
-  subject {page}
+ 
   describe "Home page" do
     
-    before (visit root_path)
-    
-    it { should have_selector('h1',       text: 'Chesshall') }
-  	it { should have_selector('title',    text: full_title('')) }
-  	it { should_not have_selector 'title', text: '|Home' }
-  	end
+    it "should have the content 'Chesshall'" do
+      # Run the generator again with the --webrat flag if you want to use webrat methods/matchers
+      visit '/static_pages/home'
+      page.should have_selector('h1', text: 'Chesshall')
+    end
+  
+    it "should have the title 'Home'" do
+      visit "/static_pages/home"
+      page.should have_selector('title', text: "Chesshall | Home")
+    end
   end
 
   describe "Help page" do
-    before { visit help_path }
 
-    it { should have_selector('h1',    text: 'Help') }
-    it { should have_selector('title', text: full_title('Help')) }
+  	it "should have the h1 'Help'" do
+  		visit '/static_pages/help'
+  		page.should have_selector('h1', text: 'Help')
+  	end
+    it "should have the title 'Help'" do
+      visit '/static_pages/help'
+      page.should have_selector('title', text: 'Chesshall | Help')
+    end
   end
 
   describe "About page" do
-    before { visit about_path }
 
-    it { should have_selector('h1',    text: 'About') }
-    it { should have_selector('title', text: full_title('About Us')) }
+  	it "should have the h1 'About Us'" do
+  		visit '/static_pages/about'
+  		page.should have_selector('h1', text: 'About Us')
+  	end
+    it "should have the title 'About Us'" do
+      visit '/static_pages/about'
+      page.should have_selector('title', text: 'Chesshall | About')
+    end
   end
-
-  describe "Chess circles" do
-
-  	it "should have the content 'Chess circles'" do
-  		visit chesscircles_path
-  		page.should have_selector('h1', :text => 'For chess circles and tournament organizers')
-		end
-
-  	it "should have the right title 'About Us'" do
-	  	visit  chesscircles_path
-  		page.should have_selector('title', :text => "#{base_title} | Chess circles")
-		end
-	end
 end
+
