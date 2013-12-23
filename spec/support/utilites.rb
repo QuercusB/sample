@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 def full_title(page_title)
 	base_title = "Chesshall"
 	if page_title.empty?

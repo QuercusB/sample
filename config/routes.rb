@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 Sample::Application.routes.draw do
   get "static_pages/home"
 
