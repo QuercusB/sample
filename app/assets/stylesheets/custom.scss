@@ -1,1 +1,41 @@
 @import "bootstrap";
+@import "bootstrap-responsive";
+
+html {
+	overflow-y: scroll;
+}
+
+body {
+	padding-top: 100px;
+}
+
+section {
+	overflow: auto;
+}
+
+textarea {
+	resize: vertical;
+}
+
+.center {
+	text-align: center;
+}
+
+.center h1 {
+	margin-bottom: 10px;	
+}
+
+.row-fluid [class*="span"] {
+    -moz-box-sizing: 	border-box;
+    min-height: 		400px;
+}
+
+.CHsquarestyle {
+	background-color:	#dedede; 
+	border:				solid 2px #333;
+}
+
+.nopadding {
+   padding: 25px !important;
+   margin: 0 !important;
+}
