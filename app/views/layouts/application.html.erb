@@ -8,42 +8,35 @@
 	  <%= stylesheet_link_tag    "application", media: "all" %>
 	  <%= javascript_include_tag "application" %>
 	  <%= csrf_meta_tags %>
-	  <!--[if lt IE 9]>
-	    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-	    <![endif]-->
+	  <%= render 'layouts/shim' %>
 	</head>
+
 	<body>
-		<header class="navbar navbar-fixed-top navbar-inverse">
-			<div class="navbar-inner">
-				<div class="container">
-					<%= link_to "Chesshall", '#', id: "logo" %>
-					<nav>
-						<ul class="nav pull-right">
-							<li><%= link_to "Home", '#' %></li>
-							<li><%= link_to "Help", '#' %></li>
-							<li><%= link_to "Sign in", '#' %></li>
-						</ul>
-					</nav>
-				</div>
-			</div>
-		</header>
-		<div class="container-fluid ">
-			<div class="row-fluid " >
-				<div class="span4 nopadding" style="border:solid 2px #333">
+		<%= render 'layouts/header' %>
+		<div class="container-fluid" style="padding: 50px">
+			<div class="row-fluid rowfluidwidth">
+				<div class="span2" style="border:solid 2px #333">
 					<%= yield %>
 				</div>
-				<div class="span8 nopadding CHsquarestyle">
+				<div class="span4 CHsquarestyle">
+					<%= yield %>
+				</div>
+				<div class="span6" style="border:solid 2px #333">
 					<%= yield %>
 				</div>
 			</div>
-			<div class="row-fluid ">
-				<div class="span4 nopadding CHsquarestyle">
+			<div class="row-fluid rowfluidwidth">
+				<div class="span2 CHsquarestyle">
 					<%= yield %>
 				</div>
-				<div class="span8 nopadding" style="border:solid 2px #333">
+				<div class="span4" style="border:solid 2px #333">
+					<%= yield %>
+				</div>
+				<div class="span6 CHsquarestyle">
 					<%= yield %>
 				</div>
 			</div>
+			<%= render 'layouts/footer' %>
 		</div>
 	</body>
 </html>

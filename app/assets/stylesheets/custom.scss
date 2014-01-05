@@ -1,13 +1,12 @@
 @import "bootstrap";
 @import "bootstrap-responsive";
 
+$grayMediumLight: #eaeaea;
+
 html {
 	overflow-y: scroll;
 }
 
-body {
-	padding-top: 100px;
-}
 
 section {
 	overflow: auto;
@@ -19,23 +18,96 @@ textarea {
 
 .center {
 	text-align: center;
-}
-
-.center h1 {
+  h1 {
 	margin-bottom: 10px;	
+  }
 }
 
 .row-fluid [class*="span"] {
     -moz-box-sizing: 	border-box;
-    min-height: 		400px;
+    height: 400px;
 }
+
 
 .CHsquarestyle {
 	background-color:	#dedede; 
 	border:				solid 2px #333;
 }
 
-.nopadding {
-   padding: 25px !important;
-   margin: 0 !important;
+.rowfluidwidth{
+	min-width: 200px;
+}
+
+/*typography*/
+
+h1, h2, h3, h4, h5, h6 {
+	line-height: 1; /*leading*/
+}
+
+h1 {
+	font-size: 3em;
+	letter-spacing: -2px;
+	margin-bottom: 30px;
+	text-align: center; /*Горизонтальное выравнивание текста в пределах элемента*/
+}
+
+h2 {
+  font-size: 1.7em;
+  letter-spacing: -1px;
+  margin-bottom: 30px;
+  text-align: center;
+  font-weight: normal;
+  color:  $grayLight;
+}
+
+p {
+  font-size: 1.1em;
+  line-height: 1.7em;
+}
+
+/* header */
+
+#logo {
+  float: left;
+  margin-right: 10px;
+  font-size: 1.7em;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  padding-top: 9px;
+  font-weight: bold;
+  line-height: 1;
+  &:hover {
+    color: #fff;
+    text-decoration: none;
+  }
+}
+
+/* footer */
+
+footer {
+  margin-top: 45px;
+  padding-top: 5px;
+  border-top: 1px solid $grayMediumLight;
+  color: $grayLight;
+  
+  a {
+  color: $gray;
+    &:hover {
+    color: $grayDarker;
+    }
+  }
+
+  small {
+  float: left;
+  }
+
+  ul {
+  float: right;
+  list-style: none;
+    li {
+  float: left;
+  margin-left: 10px;
+    }
+  }
 }
