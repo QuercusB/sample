@@ -1,20 +1,8 @@
-# -*- encoding : utf-8 -*-
 require 'spec_helper'
 
 describe "StaticPages" do
-<<<<<<< HEAD
 
   let(:base_title) { "Chesshall" }
-  
-  describe "Home page" do
-    
-    it "should have the content 'Chesshall'" do
-      # Run the generator again with the --webrat flag if you want to use webrat methods/matchers
-      visit '/static_pages/home'
-      page.should have_selector('h1', text: 'Шахматы')
-    end
-=======
->>>>>>> 4da98a61a53185b7699f2e9488f7a8f55a262308
   
   subject {page}
 
