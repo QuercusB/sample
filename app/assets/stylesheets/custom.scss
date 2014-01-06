@@ -11,6 +11,9 @@ html {
 	overflow-y: scroll;
 }
 
+.navbar-inner {
+    border-radius: 0px !important;
+}
 
 section {
 	overflow: auto;
@@ -34,8 +37,18 @@ textarea {
 
 
 .CHsquarestyle {
-	background-color:	#dedede; 
-	border:				solid 2px #333;
+	background-color:	#dedede;
+}
+
+.CHborderStyleUp {
+  border-top: solid 1px #333;
+  border-right: solid 1px #333;
+  border-left: solid 1px #333;
+}
+.CHborderStyleDown {
+  border-bottom: solid 1px #333;
+  border-right: solid 1px #333;
+  border-left: solid 1px #333;
 }
 
 .rowfluidwidth{
@@ -78,7 +91,7 @@ p {
   color: #fff;
   text-transform: uppercase;
   letter-spacing: -1px;
-  padding-top: 9px;
+  padding-top: 1px;
   font-weight: bold;
   line-height: 1;
   &:hover {
