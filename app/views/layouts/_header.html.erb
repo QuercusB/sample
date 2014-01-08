@@ -3,10 +3,14 @@
 		<div class="container">
 			<%= link_to image_tag("Chesshall.png", alt: "Chesshall"), root_path, id: "logo" %>
 			<nav>
+				<ul class="nav pull-center">
+					<li><%= link_to "Игровой зал", '#' %></li>
+					<li><%= link_to "Турнирный зал", '#' %></li>
+					<li><%= link_to "Учебный зал", '#' %></li>
+					<li><%= link_to "Читальный зал", '#' %></li>
+				</ul>
 				<ul class="nav pull-right">
-					<li><%= link_to "Home", root_path %></li>
-					<li><%= link_to "Help", help_path %></li>
-					<li><%= link_to "Sign in", '#' %></li>
+					<li><%= link_to "Войти", '#' %></li>
 				</ul>
 			</nav>
 		</div>
