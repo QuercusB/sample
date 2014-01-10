@@ -1,3 +1,4 @@
+# coding: utf-8
 require 'spec_helper'
 
 describe "UserPages" do
@@ -16,7 +17,7 @@ describe "UserPages" do
 
 	    before { visit signup_path }
 
-	    let(:submit) { "Create my account" }
+	    let(:submit) { "Присоединиться" }
 
 	    describe "with invalid information" do
 		    it "should not create a user" do
@@ -26,10 +27,10 @@ describe "UserPages" do
 
 	    describe "with valid information" do
 	     	 before do
-		        fill_in "Name",         with: "Example User"
-		        fill_in "Email",        with: "user@example.com"
-		        fill_in "Password",     with: "foobar"
-		        fill_in "Confirmation", with: "foobar"
+		        fill_in "Имя",         			with: "Example User"
+		        fill_in "Email",       			with: "user@example.com"
+		        fill_in "Пароль",     			with: "foobar"
+		        fill_in "Подтверждение пароля", with: "foobar"
 	    	end
 
 		    it "should create a user" do
