@@ -1,0 +1,20 @@
+<% provide(:title, "Sign in") %>
+
+<div class="row">
+  <div class="span6 offset10">
+    <%= form_for(:session, url: sessions_path) do |f| %>
+      <h1>Вход в Chesshall</h1>
+      <p>Еще не зарегистрированы? <%= link_to "Присоединяйтесь!", signup_path %></p>
+      
+      <%= f.label :email, "Адрес электронной почты" %>
+      <%= f.text_field :email %>
+
+      <%= f.label :password, "Пароль" %>
+      <%= f.password_field :password %>
+
+      <%= f.submit "Войти", class: "btn btn-large btn-primary" %>
+    <% end %>
+
+    
+  </div>
+</div>

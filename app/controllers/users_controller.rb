@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class UsersController < ApplicationController
   def show
   	@user = User.find(params[:id])
@@ -8,9 +9,10 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = User.new(params[:user])
+    @user = User.new(user_params)
     if @user.save
-      flash[:success] = "Welcome to the Sample App!"
+      sign_in @user
+      flash[:success] = "Добро пожаловать в Chesshall"
       redirect_to @user
     else
       render 'new'
