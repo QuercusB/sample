@@ -33,7 +33,7 @@ describe "Authentication" do
 	  	end
 
 	  	it { should have_title(user.name) }
-	  	it { should have_link('Мой профиль',	href: user_path(user)) }
+	  	it { should have_link('Настройки',    href: edit_user_path(user)) }
 	  	it { should have_link('Выйти',		href: signout_path) }
 	  	it { should_not have_link('Войти',	href: signin_path) }
 
@@ -42,5 +42,42 @@ describe "Authentication" do
 	  		it { should have_link('Войти') }
 	  	end
 	  end
+  end
+
+  describe "authorization" do
+
+    describe "for non-signed-in users" do
+      let(:user) { FactoryGirl.create(:user) }
+
+      describe "in the Users controller" do
+
+        describe "visiting the edit page" do
+          before { visit edit_user_path(user) }
+          it { should have_title('Sign in') }
+        end
+
+        describe "submitting to the update action" do
+          before { patch user_path(user) }
+          specify { expect(response).to redirect_to(signin_path) }
+        end
+      end
+    end
+
+    describe "as wrong user" do
+      let(:user) { FactoryGirl.create(:user) }
+      let(:wrong_user) { FactoryGirl.create(:user, email: "wrong@example.com") }
+      before { sign_in user, no_capybara: true }
+
+      describe "submitting a GET request to the Users#edit action" do
+        before { get edit_user_path(wrong_user) }
+        specify { expect(response.body).not_to match(full_title('Редактирование профиля')) }
+        specify { expect(response).to redirect_to(root_url) }
+      end
+
+      describe "submitting a PATCH request to the Users#update action" do
+        before { patch user_path(wrong_user) }
+        specify { expect(response).to redirect_to(root_url) }
+      end
+    end
   end
 end
