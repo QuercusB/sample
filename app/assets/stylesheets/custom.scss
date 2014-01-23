@@ -233,7 +233,6 @@ input {
 {
 opacity:0.6;
 filter:alpha(opacity=40); /* For IE8 and earlier */
-filter: url(/assets/filters.svg#grayscale); /* Firefox 3.5+ */
 filter: gray; /* IE6-9 */
 -o-filter: grayscale(100%);
 -moz-filter: grayscale(100%);
